@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+</head>
+<body>
+    <h2>Hello This is signin page</h2>
+
+    <form action="/signin" method="post">
+        {% csrf_token %}
+        <label for="text">Username</label>
+        <input type="text" id="text" name="username" placeholder="Enter user name" required>
+        <br>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" placeholder="Enter your Password" required>
+        <br>
+        <button type="submit">Sign in</button>
+     </form>
+
+        {% for message in messages %}
+                <h1>Message: {{message}}</h1>
+        {% endfor %}
+</body>
+</html>
